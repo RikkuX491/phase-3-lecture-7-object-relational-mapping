@@ -61,6 +61,7 @@ class Customer:
 
         self.id = CURSOR.execute("SELECT last_insert_rowid() FROM customers").fetchone()[0]
         CONN.commit()
+        Customer.get_all()
 
     @classmethod
     def create(cls, first_name, last_name):
